@@ -1,6 +1,6 @@
 {% set name = "connectome-workbench" %}
 {% set version = "2.0.1" %}
-{% set build = 4 %}
+{% set build = 5 %}
 
 {% set build = build + 100 %}  # [build_variant == "qt6"]
 
@@ -32,11 +32,6 @@ requirements:
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
     # libGL
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libxdamage') }}        # [linux]
-    - {{ cdt('libxxf86vm') }}        # [linux]
-    - {{ cdt('libxext') }}           # [linux]
   host:
     - noqt6                          # [build_variant == "qt5"]
     - noqt5                          # [build_variant == "qt6"]
@@ -54,6 +49,7 @@ requirements:
     - libglu                         # [linux]
     - glew                           # [windows]
     - mesalib                        # [linux]
+    - libgl-devel                    # [linux]
 
 test:
   commands:
@@ -75,11 +71,6 @@ outputs:
         - llvm-openmp  # [osx]
         - libgomp      # [linux]
         # libGL
-        - {{ cdt('mesa-libgl-devel') }}  # [linux]
-        - {{ cdt('mesa-dri-drivers') }}  # [linux]
-        - {{ cdt('libxdamage') }}        # [linux]
-        - {{ cdt('libxxf86vm') }}        # [linux]
-        - {{ cdt('libxext') }}           # [linux]
       host:
         - noqt6                          # [build_variant == "qt5"]
         - noqt5                          # [build_variant == "qt6"]
@@ -94,6 +85,7 @@ outputs:
         - libglu                         # [linux]
         - glew                           # [windows]
         - mesalib                        # [linux]
+        - libgl-devel                    # [linux]
       run:
         - libgl                          # [linux]
         - libglu                         # [linux]
@@ -117,11 +109,6 @@ outputs:
         - llvm-openmp  # [osx]
         - libgomp      # [linux]
         # libGL
-        - {{ cdt('mesa-libgl-devel') }}  # [linux]
-        - {{ cdt('mesa-dri-drivers') }}  # [linux]
-        - {{ cdt('libxdamage') }}        # [linux]
-        - {{ cdt('libxxf86vm') }}        # [linux]
-        - {{ cdt('libxext') }}           # [linux]
       host:
         - noqt6                          # [build_variant == "qt5"]
         - noqt5                          # [build_variant == "qt6"]
@@ -136,6 +123,7 @@ outputs:
         - libglu                         # [linux]
         - glew                           # [windows]
         - mesalib                        # [linux]
+        - libgl-devel                    # [linux]
       run:
         - libgl                          # [linux]
         - libglu                         # [linux]
